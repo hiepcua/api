@@ -1,5 +1,4 @@
 <?php
-die('111');
 ob_start();
 session_start();
 ini_set('display_errors',1);
@@ -10,7 +9,7 @@ require_once(libs_path.'gffunc.php');
 require_once(libs_path.'cls.mysql.php');
 define('ISHOME',true);
 
-$arr = new array();
+$arr = array();
 $arr['code'] = '';
 $arr['name'] = '';
 $arr['unit'] = '';
@@ -67,5 +66,8 @@ $arr['hide'] = '';
 $arr['second_name'] = '';
 $arr['hide_pos'] = '';
 
-SysAdd('sma_products', $arr);
+// SysAdd('sma_products', $arr);
+// SysEdit('sma_products', $arr);
+$res = SysGetList('sma_products');
+var_dump($res);
 ?>
